@@ -37,3 +37,47 @@ print(country_list) # : ['France', 'Turkey', 'switzerland', 'Italy']
 
 city_list[2] = 'Ankara' # replace Ankara to Istanbul with index 2
 print(city_list) # : ['Los angles', 'Paris', 'Ankara', 'Zurich', 'Rome']
+
+country_list[0] = 'Madrid' # replace Madrid with Los angles as element 0 from city_list
+print(city_list)
+
+
+# find elements in a list
+print(city_list.index('Ankara')) # returns index of first matched instance
+
+print(city_list.count('Paris')) # counts the number of instances
+
+# concatenate lists
+country_list = country_list + ['Algeria','Canada','Russia']
+print(country_list)
+
+# slicing a list [start:end:stride]
+Cars = ['mpg','cylinders','displacement','horsepower','weight', 'acceleration', 'model_year', 'origin', 'car_name']
+print(Cars[0]) # print first feature(element 0) : mpg
+print(Cars[0:3]) # print first three features(elements 0, 1, 2) : ['mpg', 'cylinders', 'displacement']
+print(Cars[:3]) # print first three features(elements 0, 1, 2) : ['mpg', 'cylinders', 'displacement']
+print(Cars[3:]) # print features from 3rd position (elements 3, 4, 5, 6, 7, 8) : ['horsepower', 'weight', 'acceleration', 'model_year', 'origin', 'car_name']
+print(Cars[-1]) # print last feature(last element (element 8)) : car_name 
+print(Cars[::2]) # print every 2nd features(elements (0, 2, 4)) : ['mpg', 'displacement', 'weight', 'model_year', 'car_name']
+print(Cars[::-1]) # print backwards (4, 3, 2, 1, 0) : ['car_name', 'origin', 'model_year', 'acceleration', 'weight', 'horsepower', 'displacement', 'cylinders', 'mpg']
+
+# alternative method for returning the list backwards
+list(reversed(Cars)) # : ['car_name', 'origin', 'model_year', 'acceleration', 'weight', 'horsepower', 'displacement', 'cylinders', 'mpg']
+
+# sort a list in place (modifies but does not return the list)
+city_list.sort() # : ['Ankara', 'Los angles', 'Paris', 'Rome', 'Zurich']
+city_list.sort(reverse=True) # sort in reverse : ['Zurich', 'Rome', 'Paris', 'Los angles', 'Ankara']
+city_list.sort(key=len) # sort by a key : ['Rome', 'Paris', 'Zurich', 'Ankara', 'Los angles']
+
+# return a sorted list (but does not modify the original list)
+sorted(city_list)
+sorted(city_list, reverse=True)
+sorted(city_list, key=len)
+
+# three way of copying list
+new_list = Cars.copy()
+new_list = Cars[:]
+new_list = list(Cars)
+
+# examine objects of a list
+print(Cars == new_list) # returns True (their contents are equivalent)
