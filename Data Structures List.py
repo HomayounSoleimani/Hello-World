@@ -81,3 +81,12 @@ new_list = list(Cars)
 
 # examine objects of a list
 print(Cars == new_list) # returns True (their contents are equivalent)
+
+# find elements in a list:
+# city_list.index('Ankara') # returns index of first matched instance
+# in case of Ankara abscence it would return "ValueError" so we can try bellow 
+try:
+	print(city_list.index('Pars'))
+except Exception as e:
+	print('\nAnkara is not in the "city_list"!!!') # display customize comment
+
